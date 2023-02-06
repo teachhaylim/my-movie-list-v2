@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_movie_list_v2/core/locale.dart';
-import 'package:my_movie_list_v2/views/main_scaffold/home/home.screen.dart';
-import 'package:my_movie_list_v2/views/main_scaffold/search/search.screen.dart';
+import 'package:my_movie_list_v2/views/home/home.screen.dart';
+import 'package:my_movie_list_v2/views/search/search.screen.dart';
 import 'package:my_movie_list_v2/views/setting/setting.screen.dart';
 
 class MainScaffold extends StatefulWidget {
@@ -13,6 +13,8 @@ class MainScaffold extends StatefulWidget {
 
 class _MainScaffoldState extends State<MainScaffold> {
   int currentPageIndex = 0;
+
+  void _onDestinationSelected(int index) => setState(() => currentPageIndex = index);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class _MainScaffoldState extends State<MainScaffold> {
       ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: currentPageIndex,
-        onDestinationSelected: (index) => setState(() => currentPageIndex = index),
+        onDestinationSelected: _onDestinationSelected,
         destinations: const [
           NavigationDestination(
             icon: Icon(Icons.home_outlined),

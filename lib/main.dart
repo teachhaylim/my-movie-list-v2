@@ -1,17 +1,22 @@
 import "package:flutter/material.dart";
+import "package:flutter/services.dart";
 import "package:get/get.dart";
 import "package:my_movie_list_v2/core/di.dart";
+import "package:my_movie_list_v2/core/locale.dart";
 import "package:my_movie_list_v2/core/router.dart";
 import "package:my_movie_list_v2/core/routes.dart";
 import "package:my_movie_list_v2/core/theme.dart";
 import "package:my_movie_list_v2/utils/ext/shared_preference.ext.dart";
-import "package:package_info_plus/package_info_plus.dart";
 import "package:shared_preferences/shared_preferences.dart";
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  PackageInfo packageInfo = await PackageInfo.fromPlatform();
-  await initDependencyInjection(packageInfo);
+  await initDependencyInjection();
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarBrightness: Brightness.light,
+    systemNavigationBarIconBrightness: Brightness.light,
+    statusBarColor: Colors.transparent,
+  ));
   runApp(const MyMovieListApp());
 }
 
@@ -21,7 +26,7 @@ class MyMovieListApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: "My Movie List",
+      title: AppLocale.appName,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: getIt<SharedPreferences>().savedTheme,
