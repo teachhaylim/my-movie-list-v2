@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_movie_list_v2/core/routes.dart';
+import 'package:my_movie_list_v2/core/navigation/routes.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

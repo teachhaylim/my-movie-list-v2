@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_movie_list_v2/core/locale.dart';
+import 'package:my_movie_list_v2/core/locale/locale.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_movie_list_v2/core/app_info.dart';
+import 'package:my_movie_list_v2/core/config/app_info.dart';
 import 'package:my_movie_list_v2/core/di.dart';
-import 'package:my_movie_list_v2/core/dialog.dart';
-import 'package:my_movie_list_v2/core/locale.dart';
-import 'package:my_movie_list_v2/core/routes.dart';
+import 'package:my_movie_list_v2/core/widgets/dialog.dart';
+import 'package:my_movie_list_v2/core/locale/locale.dart';
+import 'package:my_movie_list_v2/core/navigation/routes.dart';
 
 class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});

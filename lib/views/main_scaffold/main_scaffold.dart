@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_movie_list_v2/core/locale.dart';
+import 'package:my_movie_list_v2/core/locale/locale.dart';
 import 'package:my_movie_list_v2/views/home/home.screen.dart';
 import 'package:my_movie_list_v2/views/search/search.screen.dart';
 import 'package:my_movie_list_v2/views/setting/setting.screen.dart';

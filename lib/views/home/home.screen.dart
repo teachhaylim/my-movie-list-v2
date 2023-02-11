@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:my_movie_list_v2/core/di.dart';
-import 'package:my_movie_list_v2/core/locale.dart';
+import 'package:my_movie_list_v2/core/locale/locale.dart';
 import 'package:my_movie_list_v2/domain/apis/movie/movie.api.dart';
 
 class HomeScreen extends StatefulWidget {

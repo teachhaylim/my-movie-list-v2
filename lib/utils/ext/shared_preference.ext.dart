@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_movie_list_v2/core/di.dart';
-import 'package:my_movie_list_v2/core/preference_keys.dart';
+import 'package:my_movie_list_v2/core/config/preference_keys.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 extension SharedPreferenceExt on SharedPreferences {

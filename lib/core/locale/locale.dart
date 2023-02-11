@@ -16,4 +16,11 @@ class AppLocale {
   static const String navigationHomeLabel = "Home";
   static const String navigationSearchLabel = "Search";
   static const String navigationSettingLable = "Setting";
+
+  //! Error
+  static const String clientError = "Client error";
+  static const String internalServerError = "Internal Server Error";
+  static const String commonServerError = "Something went wrong";
+  static const String requestTimeoutError = "Request timeout";
+  static const String noInternetConnectionError = "No internet connection";
 }

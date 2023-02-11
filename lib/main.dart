@@ -2,10 +2,10 @@ import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 import "package:get/get.dart";
 import "package:my_movie_list_v2/core/di.dart";
-import "package:my_movie_list_v2/core/locale.dart";
-import "package:my_movie_list_v2/core/router.dart";
-import "package:my_movie_list_v2/core/routes.dart";
-import "package:my_movie_list_v2/core/theme.dart";
+import 'package:my_movie_list_v2/core/locale/locale.dart';
+import 'package:my_movie_list_v2/core/navigation/router.dart';
+import 'package:my_movie_list_v2/core/navigation/routes.dart';
+import 'package:my_movie_list_v2/core/config/theme.dart';
 import "package:my_movie_list_v2/utils/ext/shared_preference.ext.dart";
 import "package:shared_preferences/shared_preferences.dart";
 
