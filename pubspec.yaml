@@ -9,25 +9,38 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+
+  #Helper
   get: ^4.6.5
-  freezed_annotation: ^2.2.0
-  json_annotation: ^4.8.0
   shared_preferences: ^2.0.17
-  flutter_svg: ^1.1.6
+  get_it: ^7.2.0
+  logger: ^1.1.0
+
+  #Platform Helper
   share_plus: ^6.3.0
   connectivity_plus: ^3.0.2
   package_info_plus: ^3.0.2
   device_info_plus: ^8.0.0
-  cached_network_image: ^3.2.3
-  get_it: ^7.2.0
+
+  #UI
   shimmer: ^2.0.0
-  retrofit: ^3.3.1
-  logger: ^1.1.0
+  smooth_page_indicator: ^1.0.0+2
+  carousel_slider: ^4.2.1
+  cached_network_image: ^3.2.3
+  flutter_svg: ^1.1.6
+
+  #State Management
+  flutter_bloc: ^8.1.2
+  equatable: ^2.0.5
+  bloc_concurrency: ^0.2.1
 
   #Network
   dio: ^4.0.6
   pretty_dio_logger: ^1.1.1
   dio_smart_retry: ^1.4.0
+  retrofit: ^3.3.1
+  freezed_annotation: ^2.2.0
+  json_annotation: ^4.8.0
 
 dev_dependencies:
   flutter_test:

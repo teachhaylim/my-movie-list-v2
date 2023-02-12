@@ -8,10 +8,7 @@ class CustomSimpleDialog {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(title ?? AppLocale.commonInfoText),
-          content: const Text('A dialog is a type of modal window that\n'
-              'appears in front of app content to\n'
-              'provide critical information, or prompt\n'
-              'for a decision to be made.'),
+          content: Text(message),
           actions: [
             TextButton(
               child: Text(positiveBtnLabel ?? AppLocale.commonOkText),

@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:my_movie_list_v2/core/di.dart';
+import 'package:my_movie_list_v2/core/error/custom_error.dart';
 import 'package:my_movie_list_v2/core/locale/locale.dart';
 import 'package:retrofit/dio.dart';
 
@@ -15,8 +16,16 @@ abstract class ApiResponse<T> {
 
       switch (error.type) {
         case DioErrorType.response:
-          message = error.response?.data["message"] ?? AppLocale.commonServerError;
-          statusCode = error.response?.statusCode ?? -1;
+          dynamic errorMessage = error.response?.data["status_message"] ?? error.response?.data["errors"];
+
+          if (errorMessage.runtimeType == List<dynamic>) {
+            errorMessage = (errorMessage as List<dynamic>).join(", ");
+          } else {
+            errorMessage = errorMessage as String;
+          }
+
+          message = errorMessage ?? AppLocale.commonServerError;
+          statusCode = error.response?.data["status_code"] ?? error.response?.statusCode ?? -1;
           break;
         case DioErrorType.connectTimeout:
         case DioErrorType.receiveTimeout:
@@ -50,6 +59,10 @@ class ApiErrorResponse<T> extends ApiResponse<T> {
   final String message;
 
   const ApiErrorResponse({this.statusCode = -1, required this.message});
+
+  CustomError get toCustomError {
+    return CustomError(statusCode: this.statusCode, message: this.message);
+  }
 }
 
 extension HttpResponseExt on HttpResponse {
@@ -57,7 +70,7 @@ extension HttpResponseExt on HttpResponse {
     final int statusCode = response.statusCode ?? 404;
 
     if (statusCode >= 200 && statusCode <= 299) {
-      return ApiSuccessResponse(data: response.data as T);
+      return ApiSuccessResponse(data: data as T);
     }
 
     if (statusCode >= 400 && statusCode <= 499) {
